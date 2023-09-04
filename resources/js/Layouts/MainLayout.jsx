@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiAppBar from "@mui/material/AppBar";
@@ -83,8 +83,8 @@ export default function MainLayout({ user, children }) {
             post(route("logout"));
         }
     };
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [anchorElUser, setAnchorElUser] = useState(null);
 
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
@@ -94,7 +94,7 @@ export default function MainLayout({ user, children }) {
         setAnchorElUser(null);
     };
     const theme = useTheme();
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = useState(true);
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -106,7 +106,7 @@ export default function MainLayout({ user, children }) {
 
     // Start account Avatar
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
     const openAvatar = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
